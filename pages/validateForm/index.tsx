@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import InputField from "../../components/inputField/InputField";
 
 interface registerFormInputs {
   username: string,
@@ -17,7 +18,16 @@ export default function ValidateForm() {
 
   return (
     <form name="registerUser" onSubmit={handleSubmit(onSubmit)} className="w-1/4 p-4 my-0 mx-auto text-center">
-      <input
+      {/* className, placeholder, name, type, inputName, ...rest */}
+      <InputField
+        classNames="block w-full border border-black mb-2 pl-2"
+        placeholder="Username"
+        name="username"
+        type="text"
+        errors={errors}
+        {...register("username", { required: true, minLength: 6 })}
+      />
+      {/* <input
         {...register("username", { required: true, minLength: 6 })}
         className="block w-full border border-black mb-2 pl-2"
         placeholder="Username"
@@ -31,7 +41,7 @@ export default function ValidateForm() {
       {
         errors.username && errors.username.type === 'minLength' && (
         <div className="text-red-700">Username should have minimum 6 characters</div>
-      )}
+      )} */}
       <input
         {...register("email", { required: true, minLength: 6 })}
         className="block w-full border border-black mb-2 pl-2"
