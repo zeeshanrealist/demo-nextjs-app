@@ -30,7 +30,10 @@ export default function Home({ allPostsData }) {
           <a className="pr-3">Simple Form with no validation</a>
         </Link>
         <Link href="/validateForm">
-          <a>React Hook Form with validation</a>
+          <a className="pr-3">React Hook Form with validation</a>
+        </Link>
+        <Link href="/validateForm">
+          <a className="pr-3">Formik Form</a>
         </Link>
       </div>
       {/* <Banner />

@@ -9,10 +9,10 @@ interface Props {
   type: string,
   errors: FieldErrors
 };
+
 type Ref = HTMLInputElement;
 
 const InputField = forwardRef<Ref, Props>(({ classNames, placeholder, name, type, errors, ...rest }, ref) => {
-  // const { classNames, placeholder, name, type, inputName, ...rest } = props;
   console.log('rest of----', {...rest});
   return (
     <>
